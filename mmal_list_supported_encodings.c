@@ -18,7 +18,7 @@
 #define _check(x) do { \
     MMAL_STATUS_T status = (x); \
     if (status != MMAL_SUCCESS) { \
-        vcos_log_error("%s:%d: %s: %s(%d)\n", __FILE__, __LINE__, #x, mmal_status_to_string(status), status); \
+        mmal_log_error("%s:%d: %s: %s(%d)\n", __FILE__, __LINE__, #x, mmal_status_to_string(status), status); \
         exit(EXIT_FAILURE); \
     } \
 } while (0)
@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
     }
 
     bcm_host_init();
-    vcos_log_register(argv[0], VCOS_LOG_CATEGORY);
 
     /* Create camera and video_render component. */
     _check(mmal_component_create(argv[1], &comp));
