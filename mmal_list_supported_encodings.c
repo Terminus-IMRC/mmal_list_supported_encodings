@@ -58,8 +58,6 @@ int main(int argc, char *argv[])
     }
 
     bcm_host_init();
-
-    /* Create camera and video_render component. */
     _check(mmal_component_create(argv[1], &comp));
 
     printf("## Control port\n");
