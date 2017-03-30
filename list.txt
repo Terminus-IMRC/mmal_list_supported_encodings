@@ -1,0 +1,46 @@
+# Camera
+vc.ril.camera
+vc.ril.rawcam
+
+# Image
+vc.ril.image_decode
+vc.ril.image_encode
+vc.ril.image_fx
+vc.ril.image_read
+vc.ril.image_write
+vc.ril.resize
+vc.ril.source
+vc.ril.transition
+vc.ril.write_still
+vc.ril.read_media
+vc.ril.write_media
+vc.ril.isp
+vc.ril.egl_render
+vc.ril.null_sink
+
+# Video
+vc.ril.video_decode
+vc.ril.video_encode
+vc.ril.video_render
+vc.ril.video_scheduler
+vc.ril.video_splitter
+vc.scheduler
+vc.splitter
+vc.video_inject
+vc.video_convert
+
+# Audio
+vc.ril.audio_capture
+vc.ril.audio_decode
+vc.ril.audio_encode
+vc.ril.audio_lowpower
+vc.ril.audio_mixer
+vc.ril.audio_processor
+vc.ril.audio_render
+vc.ril.audio_splitter
+
+# Misc
+vc.clock
+vc.ril.clock
+vc.camera_info
+vc.miracast
