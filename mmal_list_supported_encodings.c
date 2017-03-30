@@ -32,7 +32,7 @@ static void list_supported_encodings(MMAL_PORT_T *port)
     uint32_t *encodings = NULL;
     unsigned i;
 
-    printf("* Default encoding:      %s\n", mmal_4cc_to_string(buf, sizeof(buf), port->format->encoding));
+    printf("\t* Default encoding:      %s\n", mmal_4cc_to_string(buf, sizeof(buf), port->format->encoding));
 
     hdrp = mmal_port_parameter_alloc_get(port, MMAL_PARAMETER_SUPPORTED_ENCODINGS, 0, &status);
     _check(status);
@@ -41,7 +41,7 @@ static void list_supported_encodings(MMAL_PORT_T *port)
 
     encodings = (uint32_t*) ((uint8_t*) hdrp + sizeof(*hdrp));
     for (i = 0; i < (hdrp->size - sizeof(*hdrp)) / 4; i ++)
-        printf("* Supported encoding %2u: %s\n", i, mmal_4cc_to_string(buf, sizeof(buf), encodings[i]));
+        printf("\t* Supported encoding %2u: %s\n", i, mmal_4cc_to_string(buf, sizeof(buf), encodings[i]));
 
     mmal_port_parameter_free(hdrp);
 }
@@ -60,14 +60,14 @@ int main(int argc, char *argv[])
     bcm_host_init();
     _check(mmal_component_create(argv[1], &comp));
 
-    printf("## Control port\n");
+    printf("* Control port\n");
     list_supported_encodings(comp->control);
     for (i = 0; i < comp->input_num; i ++) {
-        printf("\n## Input port %u\n", i);
+        printf("\n* Input port %u\n", i);
         list_supported_encodings(comp->input[i]);
     }
     for (i = 0; i < comp->output_num; i ++) {
-        printf("\n## Output port %u\n", i);
+        printf("\n* Output port %u\n", i);
         list_supported_encodings(comp->output[i]);
     }
 
