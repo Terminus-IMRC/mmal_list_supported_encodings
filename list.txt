@@ -6,14 +6,9 @@ vc.ril.rawcam
 vc.ril.image_decode
 vc.ril.image_encode
 vc.ril.image_fx
-vc.ril.image_read
-vc.ril.image_write
 vc.ril.resize
 vc.ril.source
 vc.ril.transition
-vc.ril.write_still
-vc.ril.read_media
-vc.ril.write_media
 vc.ril.isp
 vc.ril.egl_render
 vc.ril.null_sink
